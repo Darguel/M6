@@ -10,4 +10,34 @@ function coste(){
     euros = Math.floor(precio_total/100)
     centimos = Math.floor(precio_total%100)
     console.log("Cost de la trucada " + euros + "€ y " + centimos + "c")
+} 
+
+function rgb(){
+    let x = parseInt(prompt("Introduce el numero de red"))
+    let y = parseInt(prompt("Introduce el numero de green"))
+    let z = parseInt(prompt("Introduce el numero de blue"))
+    if (x<=15){
+        x = "0"+toHexadecimal(x)
+    }
+    else{
+        x = toHexadecimal(x)
+    }
+    if (y<=15){
+        y = "0"+toHexadecimal(y)
+    }
+    else{
+        y = toHexadecimal(y)
+    }
+    if (z<=15){
+        z = "0"+toHexadecimal(z)
+    }
+    else{
+        z = toHexadecimal(z)
+    }
+    console.log("#"+x+y+z)
+}
+
+function toHexadecimal(num){
+    return num.toString(16)
+
 }

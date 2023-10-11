@@ -23,6 +23,3 @@ function tabla() {
     tabla.style.border="1px solid black";
 
   }
-  
-
-  

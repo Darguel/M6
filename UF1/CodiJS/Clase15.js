@@ -28,8 +28,41 @@ function cosas_tiempo(){
     //07
     console.log("Queda un " + (100-(horas*100/milisegundos)).toFixed(2) + "% del dia")    
 }
+
 //calculae el EAN8 o EAN13
 
 function calcular(){
+    codigo = prompt("Escribe un codigo")
+    if (codigo.length < 8){
+        codigo = addLeftZeropadding(codigo,8)
+    }
+    else if (codigo.length > 8 && codigo.length < 13){
+        codigo = addLeftZeropadding(codigo,13)
+    }
+    else if (codigo.length == 8 || codigo.length == 13){
+        checkDigitControl(codigo)
+    }
+}
+
+function addLeftZeropadding(code,max){
+    let result = code.padStart(max, '0')
+    return result
+}
+
+function checkDigitControl(code){
+    let pedro, numero = 0;
+    control = codigo.substring(0,(codigo.length - 1))
+
+    for(let x = 1; x < codigo.length; x++ ){
+        pedro = codigo.charAt((codigo.length-x-1))
+        pedro.parseInt()
+        if (x%2 == 0){
+            numero += pedro
+        }
+        else {
+            numero += (pedro * 3)
+        }
+        
+    }
 
 }
